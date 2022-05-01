@@ -119,16 +119,19 @@ html {
     box-shadow: 0px 0px 30px var(--secondary-3);
     border: solid 15px var(--secondary-1);
     border-radius: 2.2rem;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateX(-100%);
+    animation: revealCell 0.75s linear;
 }
 
-.cell--reveal {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 0.5s linear;
+@keyframes revealCell {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-100%);
+    } to {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 
@@ -403,16 +406,19 @@ html {
 .description {
     max-width: 500px;
     margin: 3rem auto 0;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateX(100%);
+    animation: revealDesc 0.75s linear;
 }
 
-.description--reveal {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 0.5s linear;
+@keyframes revealDesc {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(100%);
+    } to {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .title {
